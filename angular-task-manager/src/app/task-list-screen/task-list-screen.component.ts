@@ -12,6 +12,10 @@ export class TaskListScreenComponent implements OnInit{
   ngOnInit(): void {
       
   }
+  onDelete(index: number){
+    console.log(index)
+    this.taskArray.splice(index,1)
+  }
 onSubmit(form : NgForm){
   console.log(form);
   this.taskArray.push({
@@ -19,5 +23,6 @@ onSubmit(form : NgForm){
     priority: form.controls['task-priority'].value,
     taskDate: form.controls['task-date'].value
   })
+  form.reset()
 }
 }

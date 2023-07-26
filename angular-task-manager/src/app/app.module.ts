@@ -6,17 +6,28 @@ import { AppComponent } from './app.component';
 import { TaskListScreenComponent } from './task-list-screen/task-list-screen.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { TaskItemComponent } from './task-item/task-item.component';
+import { TaskInputComponent } from './task-input/task-input.component';
+import { taskReducer } from './providers/tasks.reducers';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListScreenComponent,
-    HeaderComponent
+    HeaderComponent,
+    TaskItemComponent,
+    TaskInputComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({
+      "tasks":taskReducer,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

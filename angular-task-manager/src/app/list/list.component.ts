@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   tasks:TaskModel[] =[];
   constructor(private store:Store){}
   ngOnInit(): void {
-      
+    this.loadTask();
   }
 loadTask() {
   this.store.select(taskSelector).subscribe((state) => this.tasks= state)

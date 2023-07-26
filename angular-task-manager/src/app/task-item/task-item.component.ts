@@ -12,7 +12,7 @@ editTask: boolean = false;
 constructor(){}
 
   ngOnInit(): void {
-    console.log("task"+this.task)
+    console.log("task"+this.task!.id)
     this.editTask= this.task!.completed;
     
 }

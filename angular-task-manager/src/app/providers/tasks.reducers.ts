@@ -10,12 +10,12 @@ export const taskReducer = createReducer(
     }),
     on(actions.updateTaskAction, (state, task) => {
        let tempTaskIndex = state.findIndex((t)=> t.id == task.id);  
-     if(tempTaskIndex !=-1)
-     {
-        state[tempTaskIndex] = task;
-        return [...state];
+       var tempStates =[...state];
+       if(tempTaskIndex !=-1){
+      tempStates[tempTaskIndex] = task;
+       
      }
-     return [...state];
+     return [...tempStates];
     }),
     on(actions.deleteTaskAction, (state, task) => {
       let tasks = state.filter((t) => t.id != task.id);

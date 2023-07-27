@@ -3,6 +3,7 @@ import { TaskModel, tasks } from "./tasks.state";
 import { actions } from "./tasks.actions";
 
 
+
 export const taskReducer = createReducer(
     tasks,
     on(actions.addTaskAction, (state, task) => {
@@ -21,6 +22,7 @@ export const taskReducer = createReducer(
       let tasks = state.filter((t) => t.id != task.id);
       return [...tasks];
      }),
+   
 );
 
 

@@ -5,4 +5,6 @@ const addTaskAction = createAction("[TASK] ADD_TASK", props<TaskModel>())
 const updateTaskAction = createAction("[TASK] UPDATE_TASK", props<TaskModel>())
 const deleteTaskAction = createAction("[TASK] DELETE_TASK", props<TaskModel>())
 
-export const actions ={addTaskAction,updateTaskAction,deleteTaskAction};
+//sort
+const sortTaskAction = createAction("[TASK] SORT_TASK" ,  props<TaskModel>())
+export const actions ={addTaskAction,updateTaskAction,deleteTaskAction,sortTaskAction};

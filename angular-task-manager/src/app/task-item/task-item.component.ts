@@ -29,6 +29,11 @@ this.store.dispatch(actions.deleteTaskAction({
   id:this.task!.id,
   completed:this.task!.completed,
   title:this.task!.title,
+  description:this.task!.description,
+  dueDate:this.task!.dueDate,
+  priority:this.task!.priority,
+  status:this.task!.status,
+  takenBy:this.task!.takenBy,
 }))
 }
 }

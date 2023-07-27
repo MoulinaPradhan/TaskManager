@@ -1,5 +1,6 @@
 <div>
-    <h1>oh</h1>
+    <h1 *ngIf="tasks.length <=0" >No Tasks!</h1>
+    
     <div *ngFor="let task of tasks;">
         <app-task-item [task]="task"></app-task-item>
 </div>

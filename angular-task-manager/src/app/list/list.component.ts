@@ -46,4 +46,8 @@ sortPriorityDsc(){
     sortStatusDsc(){
       this.tasks= this.tasks.slice().sort((a,b) => b.status- a.status);
       }
+      sortByDate(){
+        this.tasks = this.tasks.slice().sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime());
+        
+      }
 }

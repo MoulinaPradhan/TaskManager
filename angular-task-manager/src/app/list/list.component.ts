@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TaskModel } from '../providers/tasks.state';
 import { taskSelector } from '../providers/tasks.reducers';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 @Component({
   selector: 'app-list',
@@ -17,5 +18,20 @@ export class ListComponent implements OnInit {
   }
 loadTask() {
   this.store.select(taskSelector).subscribe((state) => this.tasks= state)
+}
+downloadCsv(){
+  var options = { 
+    fieldSeparator: ',',
+    quoteStrings: '"',
+    decimalseparator: '.',
+    showLabels: true, 
+    showTitle: true,
+    title: 'Task Report',
+    useBom: true,
+    
+    headers: ["ID", "Title", "Description", "Deadline", "Priority","Task Taken By", "Status"]
+  };
+ 
+ new ngxCsv(this.tasks, "report", options);
 }
 }

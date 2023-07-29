@@ -1,9 +1,9 @@
 .container{
-    
     margin-bottom: 50px;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,0.0844712885154062) 0%, rgba(255,255,255,1) 100%);
- padding:20px;
+ padding:10px 20px;
+ font-family: sans-serif;
 }
 .low{
     color:"green"
@@ -16,12 +16,20 @@ input {
     background-color: #fff;
     border: 2px solid rgba(177, 177, 245, 0.295);
     border-radius: 4px;
+    font-weight: 700;
+	background-color: transparent;
+	outline: none;
+	border-color: #217554;
+	border-radius: 20px;
+	
+	
   }
   select {
     width: 100%;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+   
+    border:2px solid #217554;
+    border-radius: 20px;
    
   }
   
@@ -29,24 +37,29 @@ input {
     border: 3px solid #555;
   }
   .btn{
-    
-    background: rgb(191,34,10);
-    background: linear-gradient(90deg, rgba(191,34,10,1) 35%, rgba(116,34,45,1) 82%);
+    background: rgb(249,107,36);
+    background: linear-gradient(187deg, rgba(249,107,36,1) 67%, rgba(246,172,52,1) 84%);
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   border-radius:10px;
   margin-top:5px;
   cursor:pointer;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 1px 4px 2px 1px rgba(0, 0, 255, .2);
+  }
+button:disabled
+  {
+   opacity: 0.5;
   }
   .btn:hover{
-    opacity: 0.6;
-    box-shadow: 6px 16px 2px 1px rgba(0, 0, 255, .2);
+    background: rgb(249,107,36);
+    background: linear-gradient(164deg, rgba(249,107,36,1) 67%, rgba(246,172,52,1) 84%);
+   
+    box-shadow: 4px 3px 2px 1px rgba(0, 0, 255, .2);
   }
   select option{
     padding: 50px;
@@ -54,7 +67,7 @@ input {
   label {
     color: #040549;
     font-weight: bold;
-    display: block;
+    display: inline-block;
     font-size: 18px;
     float: left;
     
@@ -74,12 +87,19 @@ input {
   }
   .form-group div{
     display: flex;
+    display: table-cell;
+    vertical-align: middle;
   }
  textarea{
     padding: 10px;
     max-width: 100%;
     line-height: 1.5;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     box-shadow: 1px 1px 1px #999;
+    background-color: transparent;
+	outline: none;
+	border-color: #217554;
+	border-radius: 20px;
+	
  }

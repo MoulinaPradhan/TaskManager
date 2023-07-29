@@ -34,10 +34,9 @@ updateTask(form : NgForm){
     title:form.controls['edit-task-title'].value,
     description:form.controls['edit-task-description'].value,
     priority:1,
-    dueDate: new Date("5-9-20"),
-    //form.controls['edit-task-dueDate'].value,
+    dueDate:form.controls['edit-task-dueDate'].value,
     status:1,
-    //  form.controls['edit-task-status'].value,
+   // form.controls['edit-task-status'].value,
     takenBy:form.controls['edit-task-takenBy'].value
   }));
  

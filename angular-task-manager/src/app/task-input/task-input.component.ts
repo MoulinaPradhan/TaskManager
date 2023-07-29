@@ -32,9 +32,10 @@ export class TaskInputComponent  implements OnInit{
 // }
 onSubmit(form : NgForm){
   console.log(form);
+ 
   this.store.dispatch(actions.addTaskAction(
   {
- id:this.tasks!.length+1,
+    id:this.tasks!.length+1,
     completed:false,
     title: form.controls['task-title'].value,
     description:form.controls['task-desc'].value,
@@ -43,6 +44,7 @@ onSubmit(form : NgForm){
     status:1,
     takenBy:""
   }));
+  localStorage.setItem("jfkh",JSON.stringify(this.store));
   form.reset()
 }
 }

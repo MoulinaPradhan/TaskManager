@@ -9,18 +9,18 @@
         </div>
         <div>
           <label for="task-desc">Description</label>
-          <textarea rows="4" cols="50" type="text" class="form-control" id="task-desc" ngModel name="task-desc">
+          <textarea rows="4" cols="40" type="text" class="form-control" id="task-desc" ngModel name="task-desc"  required>
             </textarea>
         </div>
 
           <div>
             <label for="task-date">Due Date </label>
-            <input type="date" class="form-control" id="task-date" ngModel name="task-date">
+            <input type="date" class="form-control" id="task-date" ngModel name="task-date"  required>
            </div>
            <div>
             <label for="task-priority">Priority</label>
-            <select class="form-control" id="task-priority"ngModel name="task-priority">
-              <option value="1" class="low" style="background-color: green;color:aliceblue;"> 
+            <select class="form-control" id="task-priority"ngModel name="task-priority"  required>
+              <option value="1" class="low" style="background-color: green;color:aliceblue;" > 
                 Low
               </option>
               <option value="2"  style="background-color: rgb(255, 118, 6);color:aliceblue;">Medium</option>
@@ -29,8 +29,8 @@
           </div>
         </div>
           
-
+       
     
-<button type="submit" class="btn" [disabled]="myForm.invalid">Add</button>
+<button type="submit" class="btn" [disabled]="myForm.invalid" >Add</button>
       </form>
 </div>

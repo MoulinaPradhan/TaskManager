@@ -3,14 +3,10 @@
 <div class="view-container">
   <form (ngSubmit)="updateTask(editForm)" #editForm="ngForm">
     <div class="form-group">
-      <!-- <div>{{task!.id}}</div> -->
+     
       <div>{{task!.id}}</div>
       <div>
-        <input *ngIf="!editTask; else elseTitleBlock;" value="{{task?.title}}" [disabled]="!editTask">
-        <ng-template #elseTitleBlock> 
-          <input placeholder="{{task?.title}}" class="form-control" id="edit-task-title" ngModel
-            name="edit-task-title">
-        </ng-template>
+        <input value="{{task!.title}}" disabled>
       </div>
       <div>
         <input *ngIf="!editTask; else elseDescriptionBlock;" value="{{task?.description}}" [disabled]="!editTask">
@@ -20,18 +16,25 @@
         </ng-template>
       </div>
       <div>
-        <input  *ngIf="!editTask; else elsedueDateBlock;" value={{task?.dueDate}} [disabled]="!editTask" name="edit-task-dueDate">
-
-        <ng-template #elsedueDateBlock>
-          <input type="date" placeholder="{{task?.dueDate}}.toLocalDateString()" ngModel name="edit-task-dueDate">
+        <input value={{task!.dueDate}} disabled name="edit-task-dueDate">
+       </div>
+      <div >
+      <ng-template [ngIf]="task?.priority==1 && !editTask">
+          <div class="low">low</div>  
         </ng-template>
-      </div>
-      <div>
-        <select class="form-control" id="edit-task-priority" value={{task?.priority}} [disabled]="!editTask">
-          <option value="1">Low</option>
-          <option value="2">Medium</option>
-          <option value="3">High</option>
-        </select>
+        <ng-template [ngIf]="task?.priority==2 && !editTask">
+          <div class="medium"> medium</div> 
+        </ng-template>
+        <ng-template [ngIf]="task?.priority ==3 && !editTask">
+          <div class="high">high</div>
+        </ng-template>
+        <ng-template [ngIf]="editTask">
+          <select class="form-control"  id="edit-task-priority"  [disabled]="!editTask" ngModel name ="edit-task-priority">
+            <option value="1" style="background-color: green;">Low</option>
+            <option value="2" style="background-color: rgb(255, 145, 0);">Medium</option>
+            <option value="3" style="background-color: red;">High</option>
+          </select>
+        </ng-template>    
       </div>
       <div>
         <input *ngIf="!editTask; else elseTakenByBlock;" value="{{task?.takenBy}}" [disabled]="!editTask">
@@ -40,26 +43,33 @@
           <input placeholder="{{task?.takenBy}}" ngModel name="edit-task-takenBy">
         </ng-template>
       </div>
-
-      <div>
-       
-       
-        <select class="form-control" id="edit-task-status" name="edit-task-status" value="{{task?.status}}" >
-          <option value="1" class="low">to-do</option>
-          <option value="2">in-progress</option>
-          <option value="3">completed</option>
+<div>
+        <ng-template [ngIf]="task?.status==1 && !editTask">
+          <div class="todo" >to-do</div>  
+        </ng-template>
+        <ng-template [ngIf]="task?.status==2 && !editTask">
+          <div class="inprogress">in-progress</div> 
+        </ng-template>
+        <ng-template [ngIf]="task?.status ==3 && !editTask">
+          <div class="completed">completed</div>
+        </ng-template>
+        <ng-template [ngIf]="editTask">
+        <select class="form-control" id="edit-task-status"  [disabled]="!editTask" ngModel name ="edit-task-status" value="{{task?.status}}" >
+          <option value="1"  style="background-color: rgb(231, 130, 178);">to-do</option>
+          <option value="2"  style="background-color: rgb(58, 183, 214);">in-progress</option>
+          <option value="3"  style="background-color: rgb(90, 4, 71);">completed</option>
         </select>
-      
+      </ng-template>
       </div>
       <div>
-        <button *ngIf="!editTask; else elseBlock;" (click)="updateToggle()">Edit</button>
+        <button class="btn edit-btn" *ngIf="!editTask; else elseBlock;" (click)="updateToggle()">Edit</button>
 
         <ng-template #elseBlock>
-          <button (click)="updateTask(editForm)">update</button>
+          <button class="btn update-btn" (click)="updateTask(editForm)">update</button>
         </ng-template>
       </div>
       <div>
-        <button (click)="deleteTask()">Delete</button>
+        <button  (click)="deleteTask()" class="btn delete-btn">Delete</button>
       </div>
     </div>
   </form>

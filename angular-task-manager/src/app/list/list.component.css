@@ -1,0 +1,36 @@
+.list{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.list div{
+    /* width: 150px; */
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.sort-btn{
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}
+.csv-btn{
+    background: rgb(249,107,36);
+    background: linear-gradient(187deg, rgba(249,107,36,1) 67%, rgba(246,172,52,1) 84%);
+  border: none;
+  color: white;
+  /*padding: 10px 30px;*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius:10px;
+margin-right: 2rem;
+  cursor:pointer;
+  box-shadow: 1px 4px 2px 1px rgba(0, 0, 255, .2);
+}

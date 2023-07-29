@@ -14,8 +14,8 @@ export let tasks: TaskModel[]=[
     {
         id:1,
         
-        title:"hello",
-        description:"polkjdkjhdjd",
+        title:"frontend deploy",
+        description:"there is some issue to deploy this project",
         dueDate:  new Date("2019-01-16"),
         priority:1,
         status:1,
@@ -25,11 +25,11 @@ export let tasks: TaskModel[]=[
     {
         id:2,
        
-        title:"yo",
-        description:"uhjd",
-        dueDate:new Date("2023-03-23"),
+        title:"issue to arrange numbers",
+        description:"unable to add all the numbers in the list",
+        dueDate:new Date(2023,3,4),
         priority:2,
         status:2,
-        takenBy:"tunii",
+        takenBy:"Rity",
         completed:true,
     }]

@@ -1,33 +1,74 @@
-table, th, td {
-    border: 1px solid black;
-  }
+
   .high{
     background-color: red;
+    
   }
   .low{
     background-color: green;
+   
   }
   .medium{
-    background-color: yellow;
+    
+    background-color:orange;
+  }
+  .todo,.inprogress,.medium,.low,.high,.completed{
+    width:100px;
+    color: white;
+    padding:10px;
+    text-align: center;
+  }
+  .todo{
+    background-color: rgb(231, 130, 178);
+  }
+  .inprogress{
+    background-color: rgb(58, 183, 214);
+  }
+  .completed{
+    background-color: rgb(90, 4, 71);
   }
   .view-container{
     display: flex;
-    width: 80%;
-    border: 2px solid black;
+    width: 100%;
+    /* border: 2px solid black; */
     flex-direction: column;
-    /* flex-wrap: nowrap; */
-    align-content: stretch;
+    align-content: flex-start;
     justify-content: flex-end;
     align-items: center;
-    height:20px;
+    height: 20px;
+    flex-wrap: wrap;
   }
   .view-container div{
     display:flex;
-    width:150px
-
+  
+    /* width:150px */
   }
 
   input {
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding:10px;
+  
+  }
+  .btn{
+    width:100px;
+    cursor: pointer;
+    border: none;
+    border-radius:10px;
+  }
+  .delete-btn{
+    background-color: #ec1616; /* Green */
+    border: none;
+    color: white;
+  }
+  .update-btn{
+    background-color: rgb(145, 124, 10);
+    color:white
+  }
+  .edit-btn{
+    background-color: rgb(6, 110, 75);
+    color: white;
+    box-shadow: 1px 4px 2px 1px rgba(0, 0, 255, .2);
   }

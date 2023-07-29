@@ -31,12 +31,11 @@ updateTask(form : NgForm){
 
     id:this.task!.id,
     completed:false,
-    title:form.controls['edit-task-title'].value,
+    title: this.task!.title,
     description:form.controls['edit-task-description'].value,
-    priority:1,
-    dueDate:form.controls['edit-task-dueDate'].value,
-    status:1,
-   // form.controls['edit-task-status'].value,
+    priority:form.controls['edit-task-priority'].value,
+    dueDate:this.task!.dueDate,
+    status:form.controls['edit-task-status'].value,
     takenBy:form.controls['edit-task-takenBy'].value
   }));
  

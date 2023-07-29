@@ -1,19 +1,31 @@
+<div class="list">
+    <div id="id">ID</div>
+    <div id="title">Title</div>
+    <div id="desc">Description</div>
+    <div id="due">Deadline 
+        <button class="sort-btn" type="button" (click)="sortByDate()">
+            🔽
+    </button>
+</div>
+    <div>Priority <button class="sort-btn" type="button" (click)="sortPriorityAse()">⬆️</button>
+        <button class="sort-btn" type="button" (click)="sortPriorityDsc()">⬇️</button>
+
+    </div>
+    <div>Taken By</div>
+    <div>Status
+        <button class="sort-btn" type="button" (click)="sortStatusDsc()">⬆️</button>
+        <button class="sort-btn" type="button" (click)="sortStatusAse()">⬇️</button>
+</div>
 <div>
-    <button type="button" (click)="sortPriorityAse()">Sort Priority Asc</button>
-    <button type="button" (click)="sortPriorityDsc()">Sort Priority DSC</button>
-    <button type="button" (click)="sortStatusAse()">Sort Status Asc</button>
-    <button type="button" (click)="sortStatusDsc()">Sort Status DSC</button>
-    <button type="button" (click)="sortByDate()">Sort by date</button>
-    <h1 *ngIf="tasks.length <=0" >No Tasks!</h1>
-   
-      
-    <div *ngFor="let task of tasks;">
-       
- 
+    <button class="csv-btn" type="button" (click)="downloadCsv()">Download CSV</button>
+
+</div>
+</div>
+    <h1 *ngIf="tasks.length <=0">No Tasks!</h1>
+
+
+    <div *ngFor="let task of tasks;" style="margin-bottom: 30px;display: flex; flex-wrap: wrap;">
         <app-task-item [task]="task"></app-task-item>
     </div>
 
-
-
-<button type="button" (click)="downloadCsv()">Download CSV</button>
-</div>
+   

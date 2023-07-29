@@ -4,6 +4,7 @@
     background: radial-gradient(circle, rgba(63,94,251,0.0844712885154062) 0%, rgba(255,255,255,1) 100%);
  padding:10px 20px;
  font-family: sans-serif;
+
 }
 .low{
     color:"green"
@@ -84,6 +85,7 @@ button:disabled
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
   .form-group div{
     display: flex;

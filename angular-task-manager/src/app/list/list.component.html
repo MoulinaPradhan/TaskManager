@@ -2,13 +2,18 @@
     <button type="button" (click)="sortPriorityAse()">Sort Priority Asc</button>
     <button type="button" (click)="sortPriorityDsc()">Sort Priority DSC</button>
     <button type="button" (click)="sortStatusAse()">Sort Status Asc</button>
-    <button type="button" (click)="sortStatusDsc()">Sort Priority DSC</button>
+    <button type="button" (click)="sortStatusDsc()">Sort Status DSC</button>
     <button type="button" (click)="sortByDate()">Sort by date</button>
     <h1 *ngIf="tasks.length <=0" >No Tasks!</h1>
-    
+   
+      
     <div *ngFor="let task of tasks;">
+       
+ 
         <app-task-item [task]="task"></app-task-item>
-</div>
+    </div>
+
+
 
 <button type="button" (click)="downloadCsv()">Download CSV</button>
 </div>
